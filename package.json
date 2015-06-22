@@ -1,0 +1,40 @@
+{
+  "name": "hashtuber",
+  "version": "1.0.0",
+  "description": "First app for you, youtuber. For your long streaming chat talking with your fans in a hashtag in twitter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orggue/hashtuber.git"
+  },
+  "keywords": [
+    "twitter",
+    "youtube",
+    "youtuber",
+    "web"
+  ],
+  "author": "orggue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orggue/hashtuber/issues"
+  },
+  "homepage": "https://github.com/orggue/hashtuber#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-filter": "^2.0.2",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.0.5",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5",
+    "nib": "^1.1.0"
+  },
+  "dependencies": {
+    "express": "^4.13.0"
+  }
+}
