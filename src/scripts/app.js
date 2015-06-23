@@ -1,4 +1,4 @@
-angular.module("insulinum", ['ui.router'])
+angular.module("hashtuber", ['ui.router'])
 .constant('Config', {
-  apiBase: '//twitter.com/'
+  apiBase: '//twitter.com/',
 });

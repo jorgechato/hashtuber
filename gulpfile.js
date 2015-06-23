@@ -6,7 +6,8 @@ stylus = require('gulp-stylus'),
 uglify = require('gulp-uglify'),
 Filter = require('gulp-filter'),
 nib = require('nib'),
-cssmin = require('gulp-cssmin');
+cssmin = require('gulp-cssmin'),
+nodemon = require('gulp-nodemon');
 
 gulp.task('css-min',function(){
   var filter = Filter('**/*.styl');
@@ -31,7 +32,8 @@ gulp.task('css-min',function(){
 
 gulp.task('unifyjs',function(){
   return gulp.src('./src/scripts/**/*.js')
-  .pipe(uglify())
+  .pipe(concat('app.js'))
+  .pipe(uglify({mangle: false}))
   .pipe(rename({
     suffix: '.min'
   }))
@@ -43,7 +45,21 @@ gulp.task('copy-html', function(){
   .pipe(gulp.dest('./dist/views'));
 });
 
-gulp.task('default',['copy-html','css-min','unifyjs'],function(){
+gulp.task('start',function () {
+  nodemon({
+    script: 'index.js',
+    env: {
+      'NODE_ENV': 'development'
+    }
+  })
+  .on('restart', function () {
+    console.log('restarted!');
+  });
+});
+
+gulp.task('compile',['copy-html','css-min','unifyjs']);
+
+gulp.task('serve',['copy-html','css-min','unifyjs','start'],function(){
   gulp.watch('./src/views/**/*.html', ['copy-html']);
   gulp.watch([
     './src/style/**/*.styl',
