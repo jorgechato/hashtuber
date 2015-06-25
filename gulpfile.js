@@ -8,6 +8,7 @@ Filter = require('gulp-filter'),
 nib = require('nib'),
 cssmin = require('gulp-cssmin'),
 nodemon = require('gulp-nodemon');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('css-min',function(){
   var filter = Filter('**/*.styl');
@@ -17,8 +18,10 @@ gulp.task('css-min',function(){
     './src/style/**/*.css'
   ])
   .pipe(filter)
+  .pipe(sourcemaps.init())
   .pipe(stylus({
     use:nib(),
+    sourcemap: {inline: true},
     compress: true
   }))
   .pipe(filter.restore())

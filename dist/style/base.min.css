@@ -1,5 +1,6 @@
-
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300,600);
+body{font-family:'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;color:$grey}body .left{float:left}body .right{float:right}
+header #orggue{margin:8px;color:$basegrey}
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
