@@ -18,18 +18,18 @@ angular.module("hashtuber", ['ui.router','ngRoute'])
 })
 .config(function($stateProvider,$urlRouterProvider,$locationProvider){
   //.state('hashtag',{
-    //url:'/{hashtag}?',
-    //templateUrl:'../views/base/_tweets.html',
-    //controller:'hashtagCtrl',
-    //params:{
-      //hashtag:{squash:true}
-    //}
+  //url:'/{hashtag}?',
+  //templateUrl:'../views/base/_tweets.html',
+  //controller:'hashtagCtrl',
+  //params:{
+  //hashtag:{squash:true}
+  //}
   //})
   $stateProvider
   .state('hashtag',{
     url:'/',
-    templateUrl:'../views/base/_tweets.html',
-    controller:'hashtagCtrl'
+    templateUrl:'../views/base/_tweets.html'
+    //controller:'hashtagCtrl'
   });
 
   $urlRouterProvider.otherwise('/');

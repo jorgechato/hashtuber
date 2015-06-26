@@ -1,15 +1,15 @@
 <header>
 <div id="orggue">
   <div class="left">
-    <i class="fa fa-beer"></i> Buy me a beer
+    <a href="https://github.com/orggue" target="_blank"><i class="fa fa-beer"></i> Buy me a beer</a>
   </div>
   <div class="right">
-    Powered by Jorge (orggue) <i class="fa fa-github-square"></i>
+    <a href="https://github.com/orggue" target="_blank">Powered by orggue <i class="fa fa-github-square"></i></a>
   </div>
 </div>
 <div id="hashtag">
-  <form action="" method="post">
-    <input type="text" autocomplete="off" class="reset-input" id="title" placeholder="#HashTuber"/>
+  <form ng-submit="searchHashtag()">
+    <input type="text" ng-model="search" maxlength="150" autocomplete="off" class="reset-input" id="title"/>
   </form>
 </div>
 </header>
