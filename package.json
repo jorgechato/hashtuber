@@ -40,7 +40,12 @@
     "nib": "^1.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.13.1",
+    "cors": "^2.7.1",
     "express": "^4.13.0",
-    "swig": "^1.4.2"
+    "swig": "^1.4.2",
+    "twitter": "^1.2.5",
+    "winston": "^1.0.0",
+    "winston-papertrail": "^1.0.1"
   }
 }

@@ -5,7 +5,6 @@ angular.module('hashtuber')
     replace:true,
     templateUrl:'../views/base/hashheader.html',
     controller : function($scope){
-      $scope.test = 'fa-camera-retro';
     }
   };
 });

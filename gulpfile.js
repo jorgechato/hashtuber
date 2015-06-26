@@ -14,7 +14,7 @@ gulp.task('css-min',function(){
   var filter = Filter('**/*.styl');
 
   return gulp.src([
-    './src/style/**/*.styl',
+    './src/style/import.styl',
     './src/style/**/*.css'
   ])
   .pipe(filter)

@@ -1,6 +1,22 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300,600");
+@font-face
+  font-family youtube
+  font-style normal
+  src url(../fonts/league-gothic-regular.ttf)
+
 @import 'nib/vendor'
 vendor-prefixes = o ms moz webkit official
+
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+
 //colors
 $sky = #6caff1
 $red = #ff5967
