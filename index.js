@@ -10,7 +10,7 @@ app.engine('html',swig.renderFile);
 app.set('view engine','html');
 app.set('views','./dist/views');
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5005));
 
 //Cors and init json Middleware
 var corsOptions = {

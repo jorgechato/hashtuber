@@ -1,3 +1,13 @@
-<div>
-  search
+<section id="tweets">
+<from id="search-functions">
+<input class="reset-input" ng-model="filerQuestions" type="text">
+<div id="action-search" ng-init="sortTipe = 'date'">
+  <div class="fa fa-times" ng-class="{'active-filter':true}" ng-click="sortTipe = 'date'">Date</div >
+  <!--<div class="fa fa-times">Last</div >-->
+  <div class="fa fa-times" ng-click="sortTipe = 'retweet'">Retweet</div >
+  <div class="fa fa-times" ng-click="sortTipe = 'favorites'">Favorites</div >
+  <div class="fa fa-times" id="random">Random</div >
 </div>
+</from>
+<question tweet="tweet" ng-repeat="tweet in tweets | filter:filterQuestions | orderBy:sortTipe"></question>
+</section>

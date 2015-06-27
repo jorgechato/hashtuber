@@ -1,0 +1,47 @@
+#tweets
+  margin-top 3em
+  #search-functions
+    width 100%
+    input
+      cursor auto
+      width 100%
+      border: 2px solid rgba($lightgrey,.2);
+      border-radius .25rem
+      margin 1em 0
+      line-height 32px
+    #action-search
+      width 100%
+      div
+        cursor pointer
+        margin: auto;
+        font-size 14px
+        display: inline-block;
+        width: 23.83%;
+        text-align: center;
+        background-color: $darkerwhite;
+        vertical-align: top;
+        border: 2px solid rgba($lightgrey,.2);
+        padding .5em 0
+        border-radius .25rem
+        &:before
+          color rgba($lightgrey,.35)
+          position absolute
+          left 5px
+      .active-filter
+        font-weight 700
+        background-color: rgba($yellow,.5);
+        border: 2px solid $yellow;
+        &:before
+          color $yellow
+      #random
+        font-weight 700
+        color $basewhite
+        background-color: rgba($lightblue,.7);
+        border: 2px solid $lightblue;
+        &:before
+          color $lightblue
+      @media screen and (max-width: 660px)
+        div
+          width 40%
+          margin-top 1em
+          margin-left 5%
