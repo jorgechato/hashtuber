@@ -8,7 +8,13 @@ angular.module('hashtuber')
       var $el = $($element);
       var $input = $el.find('#title');
 
-      $input.css("color",randomcolor.getRandomColor());
+      var randomColor = function(){
+        var color = randomcolor.getRandomColor();
+        randomcolor.setHeaderColor(color);
+        return color;
+      };
+
+      $input.css("color",randomColor());
 
       $scope.search = '#HashTuber';
       $scope.lastSearch = 'HashTuber';
