@@ -1,4 +1,4 @@
-angular.module("hashtuber", ['ui.router','ngRoute'])
+angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare'])
 .constant('Config', {
   apiBase: '/app/search/',
   colors: [

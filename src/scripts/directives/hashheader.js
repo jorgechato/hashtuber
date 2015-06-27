@@ -37,6 +37,17 @@ angular.module('hashtuber')
         }
         $input.blur();
       };
+
+      var shareMultiLenguage = {
+        "es":"#HashTuber es increible",
+        "en":"#HashTuber"
+      };
+      $scope.socialShare = function(){
+        var userLang = navigator.language || navigator.userLanguage;
+        if (userLang.includes("es") || userLang.includes("sp")){
+          return shareMultiLenguage.es;
+        }else return shareMultiLenguage.en;
+      };
     }
   };
 });
