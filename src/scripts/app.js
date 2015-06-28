@@ -1,4 +1,4 @@
-angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare'])
+angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare','ngSanitize'])
 .constant('Config', {
   apiBase: '/app/search/',
   colors: [
@@ -21,6 +21,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare'])
   .state('hashtag',{
     url:'/search/{hashtag}?',
     templateUrl:'../views/base/_tweets.html',
+    controller:'tweetCtrl',
     params:{
       hashtag:{squash:true}
     }

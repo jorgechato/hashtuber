@@ -20,7 +20,7 @@ angular.module('hashtuber')
       $scope.lastSearch = 'HashTuber';
 
       $input.on('focus',function(){
-        $scope.search = '';
+        $scope.search = '#';
         $scope.$apply();
       });
       $input.blur(function(){

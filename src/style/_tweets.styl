@@ -4,13 +4,15 @@
     width 100%
     input
       cursor auto
-      width 100%
+      width calc(100% - 1em)
       border: 2px solid rgba($lightgrey,.2);
       border-radius .25rem
       margin 1em 0
+      padding-left 1em
       line-height 32px
     #action-search
       width 100%
+      margin-bottom 3em
       div
         cursor pointer
         margin: auto;
@@ -45,3 +47,59 @@
           width 40%
           margin-top 1em
           margin-left 5%
+  .tweet
+    margin 1.5em 0
+    .question
+      margin-left 58px
+      a
+        color $black
+        &:hover
+          color $blue
+          .avatar
+            box-shadow $blue 0 0 0 4px
+        .avatar
+          float: left;
+          margin-top: 3px;
+          margin-left: -58px;
+          width: 48px;
+          height: 48px;
+          border-radius: 5px;
+          transition .2s all ease
+    .count
+      color rgba($lightgrey,.7)
+      width 100%
+      margin 10px 0 2em 58px
+      span
+        strong
+          font-size 14px
+        float right
+        margin-right 31px
+        &.star
+          color $yellow
+        &.rt
+          color $green
+  #load-more
+    height: 120px;
+    width: 120px;
+    display: table;
+    margin: 60px auto 0;
+    position: relative;
+    &:before
+      height: 120px;
+      width: 120px
+      border-radius: 50%;
+      border-style: solid;
+      border-width: 2px;
+      box-sizing: border-box;
+      content: '';
+      left: 0;
+      position: absolute;
+      top: 0;
+    a
+      display: table-cell;
+      font-size: 12px;
+      padding: 0 9px;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      z-index: 1;

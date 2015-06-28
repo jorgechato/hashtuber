@@ -1,0 +1,14 @@
+<div class="tweet">
+<div class="question">
+  <a href="{{::tweet.url}}" target="_blank">
+  <img src="{{::tweet.img}}" alt="{{::tweet.name}}" class="avatar">
+  <strong>{{::tweet.name}}</strong>
+</a>
+<!--<div ng-bind-html="tweet.tweet.text | tweetLinky"></div>-->
+<div>{{tweet.tweet.text}}</div>
+</div>
+<div class="count">
+  <span class="fa fa-star" ng-class="{'star': tweet.tweet.favorites > 0}"> <strong>{{tweet.tweet.favorites}}</strong></span>
+  <span class="fa fa-retweet" ng-class="{'rt': tweet.tweet.retweets > 0}"> <strong>{{tweet.tweet.retweets}}</strong></span>
+</div>
+</div>
