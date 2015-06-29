@@ -8,12 +8,12 @@ angular.module('hashtuber')
     controller : function($scope,$element){
       $el = $($element);
       $a = $el.find('a');
-      $avatar = $el.find('.avatar');
 
-      //$a.hover(function(){
-        //$avatar("box-shadow",$scope.tweet.color+" 0 0 0 4px");
-        //$a.css("color",$scope.tweet.color);
-      //});
+      $a.hover(function(){
+        $(this).css("color",$scope.tweet.color);
+      },function(){
+        $(this).css("color","#262626");
+      });
     }
   };
 });

@@ -4,7 +4,7 @@ angular.module('hashtuber')
     restrict: 'E',
     replace:true,
     templateUrl:'../views/base/hashheader.html',
-    controller : function($scope,gethashtag,randomcolor,$element,$timeout){
+    controller : function($scope,gethashtag,randomcolor,$element,$timeout, $stateParams){
       var $el = $($element);
       var $input = $el.find('#title');
 

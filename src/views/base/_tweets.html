@@ -1,15 +1,15 @@
 <section id="tweets">
 <from id="search-functions">
 <input class="reset-input" ng-model="filterQuestions" placeholder="Shearch a question" type="text">
-<div id="action-search" ng-init="sortTipe = 'date'">
-  <div class="fa fa-times" ng-class="{'active-filter': sortTipe == 'date'}" ng-click="sortTipe = 'date'">Date</div >
+<div id="action-search">
+  <div class="fa fa-times" ng-class="{'active-filter': sortType == 'date'}" ng-click="order('date',false)">Date</div >
   <!--<div class="fa fa-times">Last</div >-->
-  <div class="fa fa-times" ng-class="{'active-filter': sortTipe == 'retweets'}" ng-click="sortTipe = 'retweets'">Retweet</div >
-  <div class="fa fa-times" ng-class="{'active-filter': sortTipe == 'favorites'}" ng-click="sortTipe = 'favorites'">Favorites</div >
+  <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.retweets'}" ng-click="order('tweet.retweets',true)">Retweet</div >
+  <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.favorites'}" ng-click="order('tweet.favorites',true)">Favorites</div >
   <div class="fa fa-times" id="random">Random</div >
 </div>
 </from>
-<tweet tweet="tweet" ng-repeat="tweet in tweets | filter:filterQuestions | orderBy:sortTipe"></tweet>
+<tweet tweet="tweet" ng-repeat="tweet in tweets | filter:filterQuestions | orderBy:sortType:reverse"></tweet>
 <div id="load-more" style="color:{{color}};">
   <a href="" id="load-link" style="color:{{color}};">
     <strong>

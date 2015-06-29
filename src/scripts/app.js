@@ -19,7 +19,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare','ngSaniti
 .config(function($stateProvider,$urlRouterProvider,$locationProvider){
   $stateProvider
   .state('hashtag',{
-    url:'/search/{hashtag}?',
+    url:'/search/{hashtag}',
     templateUrl:'../views/base/_tweets.html',
     controller:'tweetCtrl',
     params:{
