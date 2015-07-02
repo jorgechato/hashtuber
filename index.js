@@ -17,7 +17,7 @@ var corsOptions = {
   origin: 'http://google.com'
 };
 app.use(bodyParser.json('application/json'));
-app.use(cors(corsOptions));
+app.use(cors());
 
 //Static files
 app.use(express.static('./dist'));

@@ -1,6 +1,6 @@
-angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare','ngSanitize'])
+angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare','ngSanitize','angulartics','angulartics.google.analytics'])
 .constant('Config', {
-  apiBase: '/app/search/',
+  apiBase: '/api/search',
   colors: [
     "#6caff1",
     "#ff5967",

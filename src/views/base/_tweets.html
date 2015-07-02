@@ -3,7 +3,6 @@
 <input class="reset-input" ng-model="filterQuestions" placeholder="Shearch a question" type="text">
 <div id="action-search">
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'date'}" ng-click="order('date',false)">Date</div >
-  <!--<div class="fa fa-times">Last</div >-->
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.retweets'}" ng-click="order('tweet.retweets',true)">Retweet</div >
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.favorites'}" ng-click="order('tweet.favorites',true)">Favorites</div >
   <div class="fa fa-times" id="random">Random</div >

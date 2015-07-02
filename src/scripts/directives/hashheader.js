@@ -4,7 +4,7 @@ angular.module('hashtuber')
     restrict: 'E',
     replace:true,
     templateUrl:'../views/base/hashheader.html',
-    controller : function($scope,gethashtag,randomcolor,$element,$timeout, $stateParams){
+    controller : function($scope,middleware,randomcolor,$element,$timeout, $stateParams){
       var $el = $($element);
       var $input = $el.find('#title');
 
@@ -16,8 +16,8 @@ angular.module('hashtuber')
 
       $input.css("color",randomColor());
 
-      $scope.search = '#HashTuber';
-      $scope.lastSearch = 'HashTuber';
+      $scope.search = "#" + middleware.getFilter('hashtag');
+      $scope.lastSearch = middleware.getFilter('hashtag');
 
       $input.on('focus',function(){
         $scope.search = '#';
@@ -31,6 +31,11 @@ angular.module('hashtuber')
       $scope.searchHashtag = function(){
         $scope.search = $scope.search.replace(/ /g,"");
         $scope.search = $scope.search.replace(/#/g,"");
+        var hashtag = $scope.search;
+
+        middleware.setFilter('hashtag',hashtag);
+        middleware.search();
+
         if($scope.lastSearch != $scope.search){
           $scope.lastSearch = $scope.search;
           $scope.search = '#'+$scope.search;

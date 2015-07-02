@@ -8,7 +8,7 @@ angular.module('hashtuber')
       $http({
         url: Config.apiBase,
         method : method,
-        params : params.hashtag,
+        params : params,
         timeout : canceler.promise,
         data : data
       })
