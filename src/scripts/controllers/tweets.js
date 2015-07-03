@@ -26,4 +26,13 @@ angular.module('hashtuber')
     $scope.sortType = type;
   };
 
+  $scope.tweets = [];
+
+  $scope.$on('EndSearch',function(error, data){
+    //$scope.$apply(function () {
+    $scope.tweets = data.tweets;
+    console.log($scope.tweets);
+    //});
+  });
+
 });
