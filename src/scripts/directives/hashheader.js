@@ -4,7 +4,7 @@ angular.module('hashtuber')
     restrict: 'E',
     replace:true,
     templateUrl:'../views/base/hashheader.html',
-    controller : function($scope,middleware,randomcolor,$element,$timeout, $stateParams){
+    controller : function($scope,middleware,randomcolor,$element,$timeout, $stateParams,$translate){
       var $el = $($element);
       var $input = $el.find('#title');
 
@@ -38,15 +38,15 @@ angular.module('hashtuber')
         $scope.search = '#' + middleware.getFilter('hashtag');
       });
 
-      var shareMultiLenguage = {
-        "es":"Hazme preguntas, con #HashTuber contesto todas ",
-        "en":"#HashTuber a really great tool to play with "
+      $scope.color = randomcolor.getHeaderColor();
+
+      $scope.share = {
+        socialShare : $translate.instant('share'),
+        ToolTip : $translate.instant('tool_tip_share')
       };
-      $scope.socialShare = function(){
-        var userLang = navigator.language || navigator.userLanguage;
-        if (userLang.includes("es") || userLang.includes("sp")){
-          return shareMultiLenguage.es;
-        }else return shareMultiLenguage.en;
+      $scope.topLinks = {
+        paypal : $translate.instant('beer'),
+        github : $translate.instant('power')
       };
     }
   };

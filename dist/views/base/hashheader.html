@@ -1,10 +1,10 @@
 <header>
 <div id="orggue">
   <div class="left">
-    <a href="https://github.com/orggue" target="_blank"><i class="fa fa-beer"></i> Buy me a beer</a>
+    <a href="https://github.com/orggue" target="_blank"><i class="fa fa-beer"></i> {{topLinks.paypal}}</a>
   </div>
   <div class="right">
-    <a href="https://github.com/orggue" target="_blank">Powered by orggue <i class="fa fa-github-square"></i></a>
+    <a href="https://github.com/orggue" target="_blank">{{topLinks.github}} <i class="fa fa-github-square"></i></a>
   </div>
 </div>
 <div id="hashtag">
@@ -12,5 +12,5 @@
     <input type="text" ng-model="search" maxlength="150" autocomplete="off" class="reset-input" id="title"/>
   </form>
 </div>
-<span id="share" class="hint--right" data-hint="Share me" socialshare socialshare-provider="twitter" socialshare-text="{{socialShare()}}" socialshare-url="http://hashtuber.herokuapp.com/"><span class="fa fa-bullhorn"></span></span>
+<span id="share" class="hint--right" data-hint="{{share.ToolTip}}" socialshare socialshare-provider="twitter" socialshare-text="{{share.socialShare}}" socialshare-url="http://hashtuber.herokuapp.com/"><span class="fa fa-bullhorn"></span></span>
 </header>

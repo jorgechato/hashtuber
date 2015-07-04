@@ -2,24 +2,21 @@
 <div>
   <h2>
     <img src="../assets/img/2.jpg" alt="">
-    Choose your hashtag
+    {{info.two.title}}
   </h2>
-  <div class="card">
-    Click on <strong>#HashTuber</strong> and change it to your hashtag
+  <div class="card" ng-bind-html="info.two.text">
   </div>
   <h2>
     <img src="../assets/img/1.jpg" alt="">
-    Easy peasy
+    {{info.one.title}}
   </h2>
-  <div class="card">
-    What are you waiting for? press <strong>Enter</strong> or <strong>Intro</strong>
+  <div class="card" ng-bind-html="info.one.text">
   </div>
   <h2>
     <img src="../assets/img/go.jpg" alt="">
-    Start
+    {{info.go.title}}
   </h2>
-  <div class="card">
-    Start your streaming questions and don't forget share this page, It's <strong>FREE</strong>!!
+  <div class="card" ng-bind-html="info.go.text">
   </div>
 </div>
 <div></div>

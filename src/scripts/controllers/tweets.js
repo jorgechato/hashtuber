@@ -1,17 +1,16 @@
 angular.module('hashtuber')
-.controller('tweetCtrl',function($scope,$stateParams,$state,$element,randomcolor,middleware){
+.controller('tweetCtrl',function($scope,$stateParams,$state,$element,$translate,randomcolor,middleware){
 
   $scope.color = randomcolor.getHeaderColor();
 
-  var loadMultiLanguage = {
-    "es":"CARGAR MÁS",
-    "en":"LOAD MORE"
-  };
-  $scope.loadMore = function(){
-    var userLang = navigator.language || navigator.userLanguage;
-    if (userLang.includes("es") || userLang.includes("sp")){
-      return loadMultiLanguage.es;
-    }else return loadMultiLanguage.en;
+  $scope.load = $translate.instant('load');
+  $scope.placeholder = $translate.instant('placeholder');
+  $scope.button = {
+    date : $translate.instant('filter_date'),
+    rt: $translate.instant('filter_rt'),
+    fav : $translate.instant('filter_fav'),
+    ran : $translate.instant('filter_ran'),
+    tooltip : $translate.instant('tool_tip_working')
   };
 
   $scope.reverse = false;
