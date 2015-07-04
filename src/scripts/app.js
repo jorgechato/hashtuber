@@ -1,4 +1,4 @@
-angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720kb.socialshare','ngSanitize','angulartics','angulartics.google.analytics'])
+angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720kb.socialshare','ngSanitize','ngEmbed'])
 .constant('Config', {
   apiBase: '/api/search',
   colors: [
@@ -51,7 +51,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     filter_fav: 'Favorites',
     filter_ran: 'Random',
     tool_tip_share: 'Share me',
-    tool_tip_working: 'Workung in progress',
+    tool_tip_working: 'Working in progress',
     share: '#HashTuber a really great tool to play with ',
     placeholder: 'Find a question containing...'
   });
@@ -63,7 +63,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     info_go: 'Empieza tu streaming respondiendo las preguntas y no olvides compartir hashtuber, es <strong>GRATIS</strong>!!',
     go: 'Empieza',
     power: 'Powered by orggue',
-    beer: 'Comprame una cerbeza',
+    beer: 'Comprame una cerveza',
     load: 'CARGAR MAS',
     filter_date: 'Fecha',
     filter_rt: 'Retweets',

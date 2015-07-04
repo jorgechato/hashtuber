@@ -10,7 +10,7 @@
 </from>
 <tweet tweet="tweet" ng-repeat="tweet in tweets | filter:filterQuestions | orderBy:sortType:reverse"></tweet>
 <div id="load-more" style="color:{{color}};">
-  <a href="" id="load-link" style="color:{{color}};">
+  <a href="" id="load-link" style="color:{{color}};" class="hint--top" data-hint="{{button.tooltip}}">
     <strong>
     {{load}}
     </strong>
