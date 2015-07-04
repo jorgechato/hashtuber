@@ -28,6 +28,7 @@
         &:before
           color rgba($lightgrey,.35)
           position absolute
+        &:before,&:after
           left 5px
       .active-filter
         font-weight 700
@@ -51,6 +52,8 @@
     margin 1.5em 0
     .question
       margin-left 58px
+      div
+        user-select all
       a
         color $black
         &:hover

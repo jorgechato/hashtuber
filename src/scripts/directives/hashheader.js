@@ -8,44 +8,39 @@ angular.module('hashtuber')
       var $el = $($element);
       var $input = $el.find('#title');
 
-      var randomColor = function(){
-        var color = randomcolor.getRandomColor();
-        randomcolor.setHeaderColor(color);
-        return color;
-      };
-
-      $input.css("color",randomColor());
+      $input.css("color",randomcolor.getHeaderColor());
 
       $scope.search = "#" + middleware.getFilter('hashtag');
-      $scope.lastSearch = middleware.getFilter('hashtag');
 
       $input.on('focus',function(){
-        $scope.search = '#';
-        $scope.$apply();
+        $scope.$apply(function(){
+          $scope.search = '#';
+        });
       });
       $input.blur(function(){
-        $scope.search = '#'+$scope.lastSearch;
-        $scope.$apply();
+        $scope.$apply(function(){
+          $scope.search = '#' + middleware.getFilter('hashtag');
+        });
       });
 
       $scope.searchHashtag = function(){
         $scope.search = $scope.search.replace(/ /g,"");
         $scope.search = $scope.search.replace(/#/g,"");
-        var hashtag = $scope.search;
 
-        middleware.setFilter('hashtag',hashtag);
-        middleware.search();
-
-        if($scope.lastSearch != $scope.search){
-          $scope.lastSearch = $scope.search;
-          $scope.search = '#'+$scope.search;
+        if(middleware.getFilter('hashtag') != $scope.search){
+          middleware.setFilter('hashtag',$scope.search);
+          middleware.search();
         }
-        $input.blur();
+        $timeout(function(){$input.blur();},50);
       };
 
+      $scope.$on('NewSearch', function(){
+        $scope.search = '#' + middleware.getFilter('hashtag');
+      });
+
       var shareMultiLenguage = {
-        "es":"#HashTuber es increible",
-        "en":"#HashTuber"
+        "es":"Hazme preguntas, con #HashTuber contesto todas ",
+        "en":"#HashTuber a really great tool to play with "
       };
       $scope.socialShare = function(){
         var userLang = navigator.language || navigator.userLanguage;

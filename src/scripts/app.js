@@ -35,4 +35,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','720kb.socialshare','ngSaniti
   $urlRouterProvider.otherwise('/');
 
   $locationProvider.html5Mode(true);
+})
+.run(function(randomcolor){
+  randomcolor.setHeaderColor(randomcolor.getRandomColor());
 });

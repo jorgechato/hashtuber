@@ -1,9 +1,5 @@
 angular.module('hashtuber')
-.controller('tweetCtrl',function($scope,$stateParams,$element,randomcolor,middleware){
-
-  if ($stateParams.hashtag) {
-    middleware.setFilter('hashtag',$stateParams.hashtag);
-  }
+.controller('tweetCtrl',function($scope,$stateParams,$state,$element,randomcolor,middleware){
 
   $scope.color = randomcolor.getHeaderColor();
 
@@ -29,10 +25,17 @@ angular.module('hashtuber')
   $scope.tweets = [];
 
   $scope.$on('EndSearch',function(error, data){
-    //$scope.$apply(function () {
     $scope.tweets = data.tweets;
-    console.log($scope.tweets);
-    //});
   });
+
+  if ($stateParams.hashtag) {
+    middleware.setFilter('hashtag',$stateParams.hashtag);
+  }
+
+  $scope.$on('NewSearch',function(){
+    $state.go('hashtag',{hashtag:middleware.getFilter('hashtag')},{notify:false,reload:false});
+  });
+
+  middleware.search();
 
 });

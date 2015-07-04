@@ -12,7 +12,6 @@ angular.module('hashtuber')
     };
 
     return api.call(params,{},function(data){
-      //console.log(data);
       if (typeof callback == 'function') {
         callback(data);
       }
