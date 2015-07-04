@@ -44,7 +44,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     info_go: "Start your streaming questions and don't forget share this page, It's <strong>FREE</strong>!!",
     go: 'Start',
     power: 'Powered by orggue ',
-    beer: ' By me a beer',
+    beer: ' Buy me a beer',
     load: 'LOAD MORE',
     filter_date: 'Date',
     filter_rt: 'Retweet',
@@ -82,7 +82,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
 
   var userLang = navigator.language || navigator.userLanguage;
 
-  if (userLang.includes("es") || userLang.includes("sp")){
+  if (userLang.indexOf("es") != -1 || userLang.indexOf("sp") != -1){
     $translate.use('es');
   }else $translate.use('en');
 });
