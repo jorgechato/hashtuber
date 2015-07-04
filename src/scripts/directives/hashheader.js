@@ -4,7 +4,7 @@ angular.module('hashtuber')
     restrict: 'E',
     replace:true,
     templateUrl:'../views/base/hashheader.html',
-    controller : function($scope,middleware,randomcolor,$element,$timeout, $stateParams,$translate){
+    controller : function($scope,middleware,randomcolor,$element,$timeout, $stateParams, $state, $translate){
       var $el = $($element);
       var $input = $el.find('#title');
 
@@ -35,6 +35,7 @@ angular.module('hashtuber')
       };
 
       $scope.$on('NewSearch', function(){
+        $state.go('hashtag',{hashtag:middleware.getFilter('hashtag')});
         $scope.search = '#' + middleware.getFilter('hashtag');
       });
 

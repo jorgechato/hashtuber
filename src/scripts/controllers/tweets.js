@@ -1,5 +1,5 @@
 angular.module('hashtuber')
-.controller('tweetCtrl',function($scope,$stateParams,$state,$element,$translate,randomcolor,middleware){
+.controller('tweetCtrl',function($scope,$stateParams,$element,$translate,randomcolor,middleware){
 
   $scope.color = randomcolor.getHeaderColor();
 
@@ -30,10 +30,6 @@ angular.module('hashtuber')
   if ($stateParams.hashtag) {
     middleware.setFilter('hashtag',$stateParams.hashtag);
   }
-
-  $scope.$on('NewSearch',function(){
-    $state.go('hashtag',{hashtag:middleware.getFilter('hashtag')},{notify:false,reload:false});
-  });
 
   middleware.search();
 
