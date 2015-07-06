@@ -43,6 +43,25 @@ gulp.task('unifyjs',function(){
   .pipe(gulp.dest('./dist/scripts'));
 });
 
+gulp.task('vendor',function(){
+  return gulp.src([
+    './src/vendor/scripts/jquery-1.11.3.min.js',
+    './src/vendor/scripts/angular.min.js',
+    './src/vendor/scripts/angular-route.min.js',
+    './src/vendor/scripts/angular-ui-router.min.js',
+    './src/vendor/scripts/angular-translate.min.js',
+    './src/vendor/scripts/angular-socialshare.min.js',
+    './src/vendor/scripts/angular-sanitize.min.js',
+    './src/vendor/scripts/ng-embed.min.js',
+  ])
+  .pipe(concat('vendor.js'))
+  .pipe(uglify({mangle: false}))
+  .pipe(rename({
+    suffix: '.min'
+  }))
+  .pipe(gulp.dest('./dist/scripts'));
+});
+
 gulp.task('copy-html', function(){
   return gulp.src('./src/views/**/*.html')
   .pipe(gulp.dest('./dist/views'));

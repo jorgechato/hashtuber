@@ -5,12 +5,12 @@
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'date'}" ng-click="order('date',false)">{{button.date}}</div >
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.retweets'}" ng-click="order('tweet.retweets',true)">{{button.rt}}</div >
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.favorites'}" ng-click="order('tweet.favorites',true)">{{button.fav}}</div >
-  <div class="fa fa-times hint--bottom" data-hint="{{button.tooltip}}" id="random">{{button.ran}}</div >
+  <div ng-click="randomQuestion()" class="fa fa-times hint--bottom" data-hint="{{button.tooltip}}" id="random">{{button.ran}}</div >
 </div>
 </from>
 <tweet tweet="tweet" ng-repeat="tweet in tweets | filter:filterQuestions | orderBy:sortType:reverse"></tweet>
 <div id="load-more" style="color:{{color}};">
-  <a href="" id="load-link" style="color:{{color}};" class="hint--top" data-hint="{{button.tooltip}}">
+  <a href="" id="load-link" style="color:{{color}};" ng-click="loadMore()">
     <strong>
     {{load}}
     </strong>

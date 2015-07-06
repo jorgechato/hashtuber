@@ -24,7 +24,9 @@ angular.module('hashtuber')
   $scope.tweets = [];
 
   $scope.$on('EndSearch',function(error, data){
-    $scope.tweets = data.tweets;
+    angular.forEach(data.tweets,function(tweet){
+      $scope.tweets.push(tweet);
+    });
   });
 
   if ($stateParams.hashtag) {
@@ -32,5 +34,15 @@ angular.module('hashtuber')
   }
 
   middleware.search();
+
+  $scope.randomQuestion = function(){
+    //var index = Math.floor((Math.random() * ($scope.tweets.length - 1)));
+    //$scope.tweets[index]
+  };
+
+  $scope.loadMore = function(){
+    middleware.setFilter('since_id',$scope.tweets[$scope.tweets.length - 1].id);
+    middleware.loadMore();
+  };
 
 });

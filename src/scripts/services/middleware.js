@@ -3,12 +3,14 @@ angular.module('hashtuber')
   var backup = [];
 
   var filters = {
-    hashtag : 'HashTuber'
+    hashtag : 'HashTuber',
+    since_id : 0
   };
 
   var search = function(filters,callback){
     var params = {
-      hashtag : filters.hashtag
+      hashtag : filters.hashtag,
+      since_id : filters.since_id
     };
 
     return api.call(params,{},function(data){
@@ -21,6 +23,14 @@ angular.module('hashtuber')
   return {
     search : function(){
       $rootScope.$broadcast('NewSearch');
+      var question = search(filters,function(data){
+        $rootScope.$broadcast('EndSearch', {tweets: data});
+      });
+
+      backup.push(question);
+    },
+    loadMore : function(){
+      $rootScope.$broadcast('LoadMore');
       var question = search(filters,function(data){
         $rootScope.$broadcast('EndSearch', {tweets: data});
       });
