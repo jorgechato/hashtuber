@@ -40,6 +40,7 @@ angular.module('hashtuber')
       });
 
       $scope.color = randomcolor.getHeaderColor();
+      $scope.colorRandom = randomcolor.getRandomColor();
 
       $scope.share = {
         socialShare : $translate.instant('share'),
@@ -47,7 +48,8 @@ angular.module('hashtuber')
       };
       $scope.topLinks = {
         paypal : $translate.instant('beer'),
-        github : $translate.instant('power')
+        github : $translate.instant('power'),
+        tip: $translate.instant('tip')
       };
     }
   };

@@ -41,7 +41,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     two: 'Choose your hashtag',
     info_one: 'What are you waiting for? press <strong>Enter</strong> or <strong>Intro</strong>',
     one: 'Easy peasy',
-    info_go: "Start your streaming questions and don't forget share this page, It's <strong>FREE</strong>!!",
+    info_go: "Start your streaming questions and don't forget to share this page, It's <strong>FREE</strong>!!",
     go: 'Start',
     power: 'Powered by orggue ',
     beer: ' Buy me a beer',
@@ -53,6 +53,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     tool_tip_share: 'Share me',
     tool_tip_working: 'Working in progress',
     share: '#HashTuber a really great tool to play with ',
+    tip: 'Click to search new hashtag',
     placeholder: 'Find a question containing...'
   });
   $translateProvider.translations('es', {
@@ -72,6 +73,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     tool_tip_share: 'Comparteme',
     tool_tip_working: 'Trabajando en esto',
     share: 'Hazme preguntas, con #HashTuber contesto todas ',
+    tip: 'Click para buscar nuevo hashtag',
     placeholder: 'Busca una pregunta concreta'
   });
   $translateProvider.preferredLanguage('en');
