@@ -54,6 +54,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     tool_tip_working: 'Working in progress',
     share: '#HashTuber a really great tool to play with ',
     tip: 'Click to search new hashtag',
+    notification: 'No more questions right now, try again in a sec...',
     placeholder: 'Find a question containing...'
   });
   $translateProvider.translations('es', {
@@ -74,6 +75,7 @@ angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720
     tool_tip_working: 'Trabajando en esto',
     share: 'Hazme preguntas, con #HashTuber contesto todas ',
     tip: 'Click para buscar nuevo hashtag',
+    notification: 'No tienes mas preguntas, intentalo en unos segundos...',
     placeholder: 'Busca una pregunta concreta'
   });
   $translateProvider.preferredLanguage('en');
