@@ -21,13 +21,15 @@ angular.module('hashtuber')
   };
 
   return {
-    search : function(){
+    search : function(doSearch){
       $rootScope.$broadcast('NewSearch');
-      var question = search(filters,function(data){
-        $rootScope.$broadcast('EndSearch', {tweets: data});
-      });
+      if(doSearch){
+        var question = search(filters,function(data){
+          $rootScope.$broadcast('EndSearch', {tweets: data});
+        });
 
-      backup.push(question);
+        backup.push(question);
+      }
     },
     loadMore : function(){
       $rootScope.$broadcast('LoadMore');

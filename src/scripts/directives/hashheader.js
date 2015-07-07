@@ -8,6 +8,8 @@ angular.module('hashtuber')
       var $el = $($element);
       var $input = $el.find('#title');
 
+      var doSearch = true;
+
       $input.css("color",randomcolor.getHeaderColor());
 
       $scope.search = "#" + middleware.getFilter('hashtag');
@@ -29,13 +31,19 @@ angular.module('hashtuber')
 
         if(middleware.getFilter('hashtag') != $scope.search){
           middleware.setFilter('hashtag',$scope.search);
-          middleware.search();
+
+        if($stateParams.hashtag){doSearch = true;}else{doSearch = false;}
+          middleware.search(doSearch );
         }
         $timeout(function(){$input.blur();},50);
       };
 
       $scope.$on('NewSearch', function(){
-        $state.go('hashtag',{hashtag:middleware.getFilter('hashtag')});
+        if(!$stateParams.hashtag){
+          $state.go('hashtag',{hashtag:middleware.getFilter('hashtag')});
+        }else{
+          $state.go('hashtag',{hashtag:middleware.getFilter('hashtag')},{notify:false, reload:false});
+        }
         $scope.search = '#' + middleware.getFilter('hashtag');
       });
 

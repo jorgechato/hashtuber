@@ -34,6 +34,10 @@ angular.module('hashtuber')
 
   $scope.tweets = [];
 
+  $scope.$on('NewSearch',function(){
+    $scope.tweets = [];
+  });
+
   $scope.$on('EndSearch',function(error, data){
     angular.forEach(data.tweets,function(tweet){
       $scope.tweets.push(tweet);
@@ -52,7 +56,7 @@ angular.module('hashtuber')
     middleware.setFilter('hashtag',$stateParams.hashtag);
   }
 
-  middleware.search();
+  middleware.search(true);
 
   $scope.randomQuestion = function(){
     //var index = Math.floor((Math.random() * ($scope.tweets.length - 1)));
