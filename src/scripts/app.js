@@ -1,4 +1,4 @@
-angular.module("hashtuber", ['ui.router','ngRoute','pascalprecht.translate','720kb.socialshare','ngSanitize','ngEmbed'])
+angular.module("hashtuber", ['ui.router','ngRoute','ngSanitize','pascalprecht.translate','720kb.socialshare','sc.twemoji'])
 .constant('Config', {
   apiBase: '/api/search',
   colors: [

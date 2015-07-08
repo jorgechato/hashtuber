@@ -47,12 +47,13 @@ gulp.task('vendor',function(){
   return gulp.src([
     './src/vendor/scripts/jquery-1.11.3.min.js',
     './src/vendor/scripts/angular.min.js',
+    './src/vendor/scripts/twemoji.min.js',
     './src/vendor/scripts/angular-route.min.js',
     './src/vendor/scripts/angular-ui-router.min.js',
+    './src/vendor/scripts/angular-sanitize.min.js',
     './src/vendor/scripts/angular-translate.min.js',
     './src/vendor/scripts/angular-socialshare.min.js',
-    './src/vendor/scripts/angular-sanitize.min.js',
-    './src/vendor/scripts/ng-embed.min.js',
+    './src/vendor/scripts/angular-twemoji.min.js',
   ])
   .pipe(concat('vendor.js'))
   .pipe(uglify({mangle: false}))

@@ -6,7 +6,7 @@
 </a>
 <!--<div ng-bind-html="tweet.tweet.text | tweetLinky"></div>-->
 <!--<div>{{tweet.tweet.text}}</div>-->
-<div class="text" ng-bind-html="tweet.tweet.text | tweet | embed:{link:false}"></div>
+<div class="text" ng-bind-html="tweet.tweet.text | tweet | twemoji"></div>
 </div>
 <div class="count">
   <span class="fa fa-star" ng-class="{'star': tweet.tweet.favorites > 0}"> <strong>{{tweet.tweet.favorites}}</strong></span>
