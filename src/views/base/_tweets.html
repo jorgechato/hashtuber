@@ -2,23 +2,23 @@
 <from id="search-functions">
 <input class="reset-input" ng-model="filterQuestions" placeholder="{{placeholder}}" type="text">
 <div id="action-search">
-  <div class="fa fa-times" ng-class="{'active-filter': sortType == 'date'}" ng-click="order('date',false)">{{button.date}}</div >
+  <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.date'}" ng-click="order('tweet.date',false)">{{button.date}}</div >
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.retweets'}" ng-click="order('tweet.retweets',true)">{{button.rt}}</div >
   <div class="fa fa-times" ng-class="{'active-filter': sortType == 'tweet.favorites'}" ng-click="order('tweet.favorites',true)">{{button.fav}}</div >
   <div ng-click="randomQuestion()" class="fa fa-times hint--bottom" data-hint="{{button.tooltip}}" id="random">{{button.ran}}</div >
 </div>
 </from>
 <tweet tweet="tweet" ng-repeat="tweet in tweets | filter:filterQuestions | orderBy:sortType:reverse"></tweet>
-<div id="load-more" style="color:{{color}};">
+<div id="load-more" style="color:{{color}};" ng-show="tweets.length > 0">
   <a href="" id="load-link" style="color:{{color}};" ng-click="loadMore()">
     <strong>
     {{load}}
     </strong>
   </a>
 </div>
-<div id="notifications" ng-hide="moreToLoad">
-  <div class="notification" style="border-color : {{color}}; background: {{background()}};">
-    {{text}}
+<div id="notify" ng-hide="moreToLoad" style="border-color : {{color}}; background: {{background()}};">
+  <div class="notification" style="color : {{color}};">
+    {{text}}<span class="right" am-time-ago="lastTweetSince"></span>
   </div>
 </div>
 </section>

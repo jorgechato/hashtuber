@@ -1,4 +1,4 @@
-angular.module("hashtuber", ['ui.router','ngRoute','ngSanitize','pascalprecht.translate','720kb.socialshare','sc.twemoji'])
+angular.module("hashtuber", ['ui.router','ngRoute','ngSanitize','ngAnimate','pascalprecht.translate','720kb.socialshare','sc.twemoji','angularMoment'])
 .constant('Config', {
   apiBase: '/api/search',
   colors: [
@@ -81,12 +81,16 @@ angular.module("hashtuber", ['ui.router','ngRoute','ngSanitize','pascalprecht.tr
   $translateProvider.preferredLanguage('en');
   $translateProvider.useSanitizeValueStrategy('sanitize');
 })
-.run(function(randomcolor,$translate){
+.run(function(randomcolor,$translate,amMoment){
   randomcolor.setHeaderColor(randomcolor.getRandomColor());
 
   var userLang = navigator.language || navigator.userLanguage;
 
   if (userLang.indexOf("es") != -1 || userLang.indexOf("sp") != -1){
     $translate.use('es');
-  }else $translate.use('en');
+    amMoment.changeLocale('es');
+  }else{
+    $translate.use('en');
+    amMoment.changeLocale('en');
+  }
 });

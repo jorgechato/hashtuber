@@ -8,7 +8,7 @@ angular.module('hashtuber')
     g = parseInt(hex.substring(2,4), 16);
     b = parseInt(hex.substring(4,6), 16);
 
-    result = 'rgba('+r+','+g+','+b+',.7)';
+    result = 'rgba('+r+','+g+','+b+',.1)';
     return result;
   };
 
@@ -24,7 +24,7 @@ angular.module('hashtuber')
   $scope.text = $translate.instant('notification');
 
   $scope.reverse = false;
-  $scope.sortType = 'date';
+  $scope.sortType = 'tweet.date';
   $scope.moreToLoad = true;
 
   $scope.order = function(type,rev){
@@ -44,6 +44,8 @@ angular.module('hashtuber')
     });
 
     if(data.tweets.length === 0 && $scope.tweets.length > 1){
+      $scope.lastTweetSince = $scope.tweets[$scope.tweets.length - 1].tweet.date;
+
       $scope.moreToLoad = false;
 
       $timeout(function(){

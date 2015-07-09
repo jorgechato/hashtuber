@@ -1,5 +1,26 @@
 #tweets
   margin-top 3em
+  #notify
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding: 10px;
+    &.ng-hide-add
+      animation: bounceOut .5s;
+    &.ng-hide-remove
+      animation: bounceIn .5s;
+    .notification
+      font-size: .8125rem;
+      line-height: 1.30770231;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-weight 600
+      span
+        font-weight 400
+        @media screen and (max-width: 500px)
+          float none!important
   #search-functions
     width 100%
     input
